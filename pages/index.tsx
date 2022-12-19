@@ -159,34 +159,46 @@ export default function Home() {
       >
         <div className="relative -z-10 min-h-[300px] md:min-h-[300px] lg:min-h-[600px] xl:min-h-[700px] 2xl:min-h-[870px] transition-all bg-cover bg-no-repeat bg-center">
           <Image
-            src="/static/images/example-image.jpeg"
+            src="/static/images/blog-main.jpg"
+            className="object-cover object-center"
             quality={100}
             fill
             alt="main-image"
-            object-fit="cover"
-            object-position="center"
           />
-          {/* <div className="absolute w-64 h-[75%] top-0 bottom-0 my-auto bg-white border border-red-500 left-10 hidden sm:block md:left-20 md:w-72 lg:left-40 lg:w-96">
-            <h2>Featured Posts</h2>
-          </div> */}
         </div>
-        {/* Blog Posts */}
-        {/* <section className="flex flex-wrap w-4/5 mx-auto border border-blue-700">
-          <div className="px-5 border border-red-500 max-w-1/2">
-            <div className="relative w-[430px] h-44">
-              <Image
-                src="/static/images/example-image.jpeg"
-                fill
-                // width={100}
-                // height={100}
-                alt="main-image"
-                // object-fit="cover"
-                // object-position="center"
-              />
-            </div>
-            <div>블로그 제목</div>
-          </div>
-        </section> */}
+        <h1 className="h-48 border border-red-500">
+          DotoriJung 의 블로그 입니다 첫 번째 글입니다
+        </h1>
+        <h1 className="h-48 border border-red-500">
+          DotoriJung 의 블로그 입니다 만세만세 만만세
+        </h1>
+        <h1 className="h-48 border border-red-500">
+          DotoriJung 의 블로그 입니다 만세만세 만만세
+        </h1>
+        <h1 className="h-48 border border-red-500">
+          DotoriJung 의 블로그 입니다 만세만세 만만세
+        </h1>
+        <h1 className="h-48 border border-red-500">
+          DotoriJung 의 블로그 입니다 만세만세 만만세
+        </h1>
+        <h1 className="h-48 border border-red-500">
+          DotoriJung 의 블로그 입니다 만세만세 만만세
+        </h1>
+        <h1 className="h-48 border border-red-500">
+          DotoriJung 의 블로그 입니다 만세만세 만만세
+        </h1>
+        <h1 className="h-48 border border-red-500">
+          DotoriJung 의 블로그 입니다 만세만세 만만세
+        </h1>
+        <h1 className="h-48 border border-red-500">
+          DotoriJung 의 블로그 입니다 만세만세 만만세
+        </h1>
+        <h1 className="h-48 border border-red-500">
+          DotoriJung 의 블로그 입니다 만세만세 만만세
+        </h1>
+        <h1 className="h-48 border border-red-500">
+          DotoriJung 의 블로그 입니다 만세만세 만만세
+        </h1>
       </section>
     </div>
   );
