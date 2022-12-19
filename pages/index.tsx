@@ -106,12 +106,12 @@ export default function Home() {
           leaveTo="opacity-0 scale-95"
           show={isSearchEnabled}
         >
-          <div className="flex h-36 absolute -bottom-[150%] left-0 right-0 w-full items-center justify-center bg-[#f1f0f0]">
-            <div className="relative w-2/3 h-20">
+          <div className="flex h-[72px] absolute -bottom-[75%] left-0 right-0 w-full items-center justify-center bg-[#f1f0f0] lg:h-36 lg:-bottom-[150%]">
+            <div className="relative w-2/3 h-10 lg:h-20">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                 <svg
                   aria-hidden="true"
-                  className="w-8 h-8 text-gray-500 dark:text-gray-400"
+                  className="w-5 h-5 text-gray-500 dark:text-gray-400 lg:w-8 lg:h-8"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +126,7 @@ export default function Home() {
               <input
                 type="text"
                 id="search"
-                className="block h-full w-full rounded-lg p-2.5 pl-14 text-lg"
+                className="block h-full w-full rounded-lg text-sm p-2.5 pl-14 lg:text-lg"
                 placeholder="Enter Your Search Topic"
               />
               <button
@@ -139,7 +139,7 @@ export default function Home() {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-8 h-8 text-gray-500 dark:text-gray-400"
+                  className="w-5 h-5 text-gray-500 dark:text-gray-400 lg:w-8 lg:h-8"
                 >
                   <path
                     strokeLinecap="round"
@@ -154,7 +154,7 @@ export default function Home() {
       </nav>
       <section
         className={`border border-blue-600 ${
-          isSearchEnabled && "pt-36"
+          isSearchEnabled && "pt-[72px] lg:pt-36"
         } w-full`}
       >
         <div className="relative -z-10 min-h-[300px] md:min-h-[300px] lg:min-h-[600px] xl:min-h-[700px] 2xl:min-h-[870px] transition-all bg-cover bg-no-repeat bg-center">
