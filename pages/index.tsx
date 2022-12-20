@@ -166,10 +166,10 @@ export default function Home() {
             alt="main-image"
           />
         </div>
-        <section className="flex flex-wrap w-[1230px] mx-auto border border-red-500">
+        <section className="flex flex-wrap w-[1230px] mx-auto border border-red-500 pt-28">
           {/* mb-20 은 나중에 */}
-          <div className="border border-green-600 w-[50%] flex flex-col px-5">
-            <div className="relative w-full h-80">
+          <div className="border border-green-600 w-[50%] flex flex-col px-5 mb-20">
+            <div className="relative w-full h-80 mb-7">
               <Image
                 src="/static/images/blog-main.jpg"
                 className="object-cover object-center"
@@ -178,17 +178,135 @@ export default function Home() {
               />
             </div>
             <div>
-              <div>#Javascript #React #NextJS</div>
-              <h2>Blog markdown test!</h2>
-              <div>
+              {/* #Javascript #React #NextJS */}
+              <div className="mb-3.5 flex flex-wrap items-center">
+                <Link
+                  href="#"
+                  className="text-[#D10068] font-normal text-sm block mr-7"
+                >
+                  <span>#Javascript</span>
+                </Link>
+                <Link
+                  href="#"
+                  className="text-[#D10068] font-normal text-sm block mr-7"
+                >
+                  <span>#React</span>
+                </Link>
+                <Link
+                  href="#"
+                  className="text-[#D10068] font-normal text-sm block mr-7"
+                >
+                  <span>#NextJS</span>
+                </Link>
+              </div>
+              <h2 className="text-xl font-bold mb-2.5 text-[#292929] leading-normal">
+                Blog markdown test!
+              </h2>
+              <p className="text-[15px] mb-0 text-[#292929] font-normal leading-loose max-h-24 line-clamp-3">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+          <div className="border border-green-600 w-[50%] flex flex-col px-5 mb-20">
+            <div className="relative w-full h-80 mb-7">
+              <Image
+                src="/static/images/blog-main.jpg"
+                className="object-cover object-center"
+                fill
+                alt="main-image"
+              />
+            </div>
+            <div>
+              {/* #Javascript #React #NextJS */}
+              <div className="mb-3.5 flex flex-wrap items-center">
+                <Link
+                  href="#"
+                  className="text-[#D10068] font-normal text-sm block mr-7"
+                >
+                  <span>#Javascript</span>
+                </Link>
+                <Link
+                  href="#"
+                  className="text-[#D10068] font-normal text-sm block mr-7"
+                >
+                  <span>#React</span>
+                </Link>
+                <Link
+                  href="#"
+                  className="text-[#D10068] font-normal text-sm block mr-7"
+                >
+                  <span>#NextJS</span>
+                </Link>
               </div>
+              <h2 className="text-xl font-bold mb-2.5 text-[#292929] leading-normal">
+                Blog markdown test!
+              </h2>
+              <p className="text-[15px] mb-0 text-[#292929] font-normal leading-loose max-h-24 line-clamp-3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+          <div className="border border-green-600 w-[50%] flex flex-col px-5 mb-20">
+            <div className="relative w-full h-80 mb-7">
+              <Image
+                src="/static/images/blog-main.jpg"
+                className="object-cover object-center"
+                fill
+                alt="main-image"
+              />
+            </div>
+            <div>
+              {/* #Javascript #React #NextJS */}
+              <div className="mb-3.5 flex flex-wrap items-center">
+                <Link
+                  href="#"
+                  className="text-[#D10068] font-normal text-sm block mr-7"
+                >
+                  <span>#Javascript</span>
+                </Link>
+                <Link
+                  href="#"
+                  className="text-[#D10068] font-normal text-sm block mr-7"
+                >
+                  <span>#React</span>
+                </Link>
+                <Link
+                  href="#"
+                  className="text-[#D10068] font-normal text-sm block mr-7"
+                >
+                  <span>#NextJS</span>
+                </Link>
+              </div>
+              <h2 className="text-xl font-bold mb-2.5 text-[#292929] leading-normal">
+                Blog markdown test!
+              </h2>
+              <p className="text-[15px] mb-0 text-[#292929] font-normal leading-loose max-h-24 line-clamp-3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
             </div>
           </div>
         </section>
