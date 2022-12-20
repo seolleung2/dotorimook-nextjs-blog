@@ -166,39 +166,32 @@ export default function Home() {
             alt="main-image"
           />
         </div>
-        <h1 className="h-48 border border-red-500">
-          DotoriJung 의 블로그 입니다 첫 번째 글입니다
-        </h1>
-        <h1 className="h-48 border border-red-500">
-          DotoriJung 의 블로그 입니다 만세만세 만만세
-        </h1>
-        <h1 className="h-48 border border-red-500">
-          DotoriJung 의 블로그 입니다 만세만세 만만세
-        </h1>
-        <h1 className="h-48 border border-red-500">
-          DotoriJung 의 블로그 입니다 만세만세 만만세
-        </h1>
-        <h1 className="h-48 border border-red-500">
-          DotoriJung 의 블로그 입니다 만세만세 만만세
-        </h1>
-        <h1 className="h-48 border border-red-500">
-          DotoriJung 의 블로그 입니다 만세만세 만만세
-        </h1>
-        <h1 className="h-48 border border-red-500">
-          DotoriJung 의 블로그 입니다 만세만세 만만세
-        </h1>
-        <h1 className="h-48 border border-red-500">
-          DotoriJung 의 블로그 입니다 만세만세 만만세
-        </h1>
-        <h1 className="h-48 border border-red-500">
-          DotoriJung 의 블로그 입니다 만세만세 만만세
-        </h1>
-        <h1 className="h-48 border border-red-500">
-          DotoriJung 의 블로그 입니다 만세만세 만만세
-        </h1>
-        <h1 className="h-48 border border-red-500">
-          DotoriJung 의 블로그 입니다 만세만세 만만세
-        </h1>
+        <section className="flex flex-wrap w-[1230px] mx-auto border border-red-500">
+          {/* mb-20 은 나중에 */}
+          <div className="border border-green-600 w-[50%] flex flex-col px-5">
+            <div className="relative w-full h-80">
+              <Image
+                src="/static/images/blog-main.jpg"
+                className="object-cover object-center"
+                fill
+                alt="main-image"
+              />
+            </div>
+            <div>
+              <div>#Javascript #React #NextJS</div>
+              <h2>Blog markdown test!</h2>
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </div>
   );
