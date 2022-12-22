@@ -131,7 +131,7 @@ export default function Home() {
               />
               <button
                 type="button"
-                className="absolute inset-y-0 right-0 flex items-center pr-3 my-2 mr-1 bg-white"
+                className="absolute inset-y-0 right-0 flex items-center pr-3 my-2 mr-1"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -157,24 +157,23 @@ export default function Home() {
           isSearchEnabled && "pt-[72px] lg:pt-36"
         } w-full`}
       >
-        <div className="relative -z-10 min-h-[300px] md:min-h-[300px] lg:min-h-[600px] xl:min-h-[700px] 2xl:min-h-[870px] transition-all bg-cover bg-no-repeat bg-center">
+        <div className="relative -z-10 min-h-[300px] md:min-h-[300px] lg:min-h-[600px] xl:min-h-[700px] 2xl:min-h-[770px] transition-all bg-cover bg-no-repeat bg-center">
           <Image
             src="/static/images/blog-main.jpg"
             className="object-cover object-center"
-            quality={100}
             fill
             alt="main-image"
           />
         </div>
-        <section className="flex flex-wrap w-[1230px] mx-auto border border-red-500 pt-28">
+        <section className="flex flex-wrap w-[1230px] mx-auto border border-red-500 pt-14">
           {/* mb-20 은 나중에 */}
           <div className="border border-green-600 w-[50%] flex flex-col px-5 mb-20">
             <div className="relative w-full h-80 mb-7">
               <Image
                 src="/static/images/blog-main.jpg"
-                className="object-cover object-center"
+                className="object-cover object-center -z-10"
                 fill
-                alt="main-image"
+                alt="blog-thumbnail"
               />
             </div>
             <div>
@@ -219,9 +218,9 @@ export default function Home() {
             <div className="relative w-full h-80 mb-7">
               <Image
                 src="/static/images/blog-main.jpg"
-                className="object-cover object-center"
+                className="object-cover object-center -z-10"
                 fill
-                alt="main-image"
+                alt="blog-thumbnail"
               />
             </div>
             <div>
@@ -266,9 +265,9 @@ export default function Home() {
             <div className="relative w-full h-80 mb-7">
               <Image
                 src="/static/images/blog-main.jpg"
-                className="object-cover object-center"
+                className="object-cover object-center -z-10"
                 fill
-                alt="main-image"
+                alt="blog-thumbnail"
               />
             </div>
             <div>
