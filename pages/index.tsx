@@ -106,8 +106,8 @@ export default function Home() {
           leaveTo="opacity-0 scale-95"
           show={isSearchEnabled}
         >
-          <div className="flex h-[72px] absolute -bottom-[75%] left-0 right-0 w-full items-center justify-center bg-[#f1f0f0] lg:h-36 lg:-bottom-[150%]">
-            <div className="relative w-2/3 h-10 lg:h-20">
+          <div className="flex h-[72px] absolute -bottom-[75%] left-0 right-0 w-full items-center justify-center bg-[#f1f0f0] sm:h-[108px] sm:-bottom-[112.5%] lg:h-36 lg:-bottom-[150%]">
+            <div className="relative flex w-2/3 h-10 lg:h-20 grow-1">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                 <svg
                   aria-hidden="true"
@@ -126,12 +126,12 @@ export default function Home() {
               <input
                 type="text"
                 id="search"
-                className="block h-full w-full rounded-lg text-sm p-2.5 pl-14 lg:text-lg"
+                className="block h-full w-full rounded-tl-lg rounded-bl-lg text-sm p-2.5 pl-14 lg:text-lg bg-white focus:outline-none"
                 placeholder="Enter Your Search Topic"
               />
               <button
                 type="button"
-                className="absolute inset-y-0 right-0 flex items-center pr-3 my-2 mr-1"
+                className="inset-y-0 right-0 flex items-center h-full pr-3 bg-white rounded-tr-lg rounded-br-lg"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -154,9 +154,10 @@ export default function Home() {
       </nav>
       <section
         className={`border border-blue-600 ${
-          isSearchEnabled && "pt-[72px] lg:pt-36"
+          isSearchEnabled && "pt-[72px] sm:pt-[108px] lg:pt-36"
         } w-full`}
       >
+        {/* Cover Large Image */}
         <div className="relative -z-10 min-h-[300px] md:min-h-[300px] lg:min-h-[600px] xl:min-h-[700px] 2xl:min-h-[770px] transition-all bg-cover bg-no-repeat bg-center">
           <Image
             src="/static/images/blog-main.jpg"
@@ -165,137 +166,35 @@ export default function Home() {
             alt="main-image"
           />
         </div>
-        <section className="flex flex-wrap w-[1230px] mx-auto border border-red-500 pt-14">
+        {/* Blog Lists section sm:px-11 sm:pt-20 */}
+        <section className="flex flex-wrap px-11 sm:max-w-[520px] sm:px-0 mx-auto border border-red-500 pt-20 w-full">
           {/* mb-20 은 나중에 */}
-          <div className="border border-green-600 w-[50%] flex flex-col px-5 mb-20">
-            <div className="relative w-full h-80 mb-7">
+          <div className="flex flex-col border border-green-600 max-h-96 min-w-96">
+            <div className="relative w-full h-56 mb-4 grow">
               <Image
                 src="/static/images/blog-main.jpg"
-                className="object-cover object-center -z-10"
+                className="object-cover object-center rounded-lg -z-10"
                 fill
                 alt="blog-thumbnail"
               />
             </div>
-            <div>
+            <div className="grow-0">
               {/* #Javascript #React #NextJS */}
-              <div className="mb-3.5 flex flex-wrap items-center">
-                <Link
-                  href="#"
-                  className="text-[#D10068] font-normal text-sm block mr-7"
-                >
+              <div className="mb-3 flex flex-wrap items-center text-[#D10068] font-normal text-sm space-x-4">
+                <Link href="#" className="block">
                   <span>#Javascript</span>
                 </Link>
-                <Link
-                  href="#"
-                  className="text-[#D10068] font-normal text-sm block mr-7"
-                >
+                <Link href="#" className="block">
                   <span>#React</span>
                 </Link>
-                <Link
-                  href="#"
-                  className="text-[#D10068] font-normal text-sm block mr-7"
-                >
+                <Link href="#" className="block">
                   <span>#NextJS</span>
                 </Link>
               </div>
-              <h2 className="text-xl font-bold mb-2.5 text-[#292929] leading-normal">
+              <h2 className="text-lg font-bold mb-2 text-[#292929] leading-normal">
                 Blog markdown test!
               </h2>
-              <p className="text-[15px] mb-0 text-[#292929] font-normal leading-loose max-h-24 line-clamp-3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </div>
-          </div>
-          <div className="border border-green-600 w-[50%] flex flex-col px-5 mb-20">
-            <div className="relative w-full h-80 mb-7">
-              <Image
-                src="/static/images/blog-main.jpg"
-                className="object-cover object-center -z-10"
-                fill
-                alt="blog-thumbnail"
-              />
-            </div>
-            <div>
-              {/* #Javascript #React #NextJS */}
-              <div className="mb-3.5 flex flex-wrap items-center">
-                <Link
-                  href="#"
-                  className="text-[#D10068] font-normal text-sm block mr-7"
-                >
-                  <span>#Javascript</span>
-                </Link>
-                <Link
-                  href="#"
-                  className="text-[#D10068] font-normal text-sm block mr-7"
-                >
-                  <span>#React</span>
-                </Link>
-                <Link
-                  href="#"
-                  className="text-[#D10068] font-normal text-sm block mr-7"
-                >
-                  <span>#NextJS</span>
-                </Link>
-              </div>
-              <h2 className="text-xl font-bold mb-2.5 text-[#292929] leading-normal">
-                Blog markdown test!
-              </h2>
-              <p className="text-[15px] mb-0 text-[#292929] font-normal leading-loose max-h-24 line-clamp-3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </div>
-          </div>
-          <div className="border border-green-600 w-[50%] flex flex-col px-5 mb-20">
-            <div className="relative w-full h-80 mb-7">
-              <Image
-                src="/static/images/blog-main.jpg"
-                className="object-cover object-center -z-10"
-                fill
-                alt="blog-thumbnail"
-              />
-            </div>
-            <div>
-              {/* #Javascript #React #NextJS */}
-              <div className="mb-3.5 flex flex-wrap items-center">
-                <Link
-                  href="#"
-                  className="text-[#D10068] font-normal text-sm block mr-7"
-                >
-                  <span>#Javascript</span>
-                </Link>
-                <Link
-                  href="#"
-                  className="text-[#D10068] font-normal text-sm block mr-7"
-                >
-                  <span>#React</span>
-                </Link>
-                <Link
-                  href="#"
-                  className="text-[#D10068] font-normal text-sm block mr-7"
-                >
-                  <span>#NextJS</span>
-                </Link>
-              </div>
-              <h2 className="text-xl font-bold mb-2.5 text-[#292929] leading-normal">
-                Blog markdown test!
-              </h2>
-              <p className="text-[15px] mb-0 text-[#292929] font-normal leading-loose max-h-24 line-clamp-3">
+              <p className="text-sm mb-0 text-[#292929] font-normal leading-relaxed max-h-20 line-clamp-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
