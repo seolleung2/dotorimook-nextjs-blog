@@ -9,12 +9,12 @@ module.exports = {
       fontFamily: {
         Catamaran: ["Catamaran", "sans-serif"],
       },
+      screens: {
+        "4xl": "2040px",
+      },
     },
   },
-  plugins: [
-    require("daisyui"),
-    require("@tailwindcss/line-clamp"),
-  ],
+  plugins: [require("daisyui"), require("@tailwindcss/line-clamp")],
 
   daisyui: {
     styled: true,
