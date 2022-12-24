@@ -28,9 +28,9 @@ export default function Home() {
       <nav className="navigation sticky -top-2 flex h-24 w-full items-center justify-between bg-[#e2e2e2] px-2 pb-2 pt-4 lg:px-4 lg:pb-4 lg:pt-8">
         <Popover className="lg:hidden">
           <div className="relative">
-            <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="w-6 h-6" aria-hidden="true" />
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
 
@@ -45,22 +45,22 @@ export default function Home() {
           >
             <Popover.Panel
               focus
-              className="absolute inset-x-0 top-0 z-10 p-2 transition origin-top-right transform lg:hidden"
+              className="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition lg:hidden"
             >
-              <div className="bg-white rounded-lg shadow-md ring-1 ring-black ring-opacity-5">
+              <div className="rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
                 <div className="flex items-center justify-between px-5 pt-4">
                   <div className="text-4xl">🌰</div>
                   <div className="-mr-2">
-                    <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                       <span className="sr-only">Close main menu</span>
-                      <XMarkIcon className="w-6 h-6" aria-hidden="true" />
+                      <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                     </Popover.Button>
                   </div>
                 </div>
-                <div className="px-2 pt-2 pb-3 space-y-1">
+                <div className="space-y-1 px-2 pt-2 pb-3">
                   {navigation.map((item) => (
                     <Link legacyBehavior key={item.name} href={item.href}>
-                      <a className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:bg-gray-50 hover:text-gray-900">
+                      <a className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">
                         {item.name}
                       </a>
                     </Link>
@@ -69,7 +69,7 @@ export default function Home() {
                 <div className="px-4">{/* Search Input Component */}</div>
                 <a
                   href="#"
-                  className="block w-full px-5 py-3 font-medium text-center text-indigo-600 bg-gray-50 hover:bg-gray-100"
+                  className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100"
                 >
                   도토리 월드 탐험!
                 </a>
@@ -85,14 +85,14 @@ export default function Home() {
             <h1>🌰DotoriLog</h1>
           </Link>
         </div>
-        <div className="flex flex-row items-center h-fit lg:h-full lg:space-x-16">
-          <ul className="items-center hidden space-x-16 text-base font-Catamaran lg:flex lg:text-lg">
+        <div className="flex h-fit flex-row items-center lg:h-full lg:space-x-16">
+          <ul className="hidden items-center space-x-16 font-Catamaran text-base lg:flex lg:text-lg">
             {navigation.map((category) => (
               <li key={category.name}>{category.name}</li>
             ))}
           </ul>
           <MagnifyingGlassIcon
-            className="w-10 h-10 px-2 text-gray-400 bg-white rounded-md cursor-pointer hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            className="h-10 w-10 cursor-pointer rounded-md bg-white px-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
             onClick={clickSearchHandler}
           />
         </div>
@@ -106,12 +106,12 @@ export default function Home() {
           leaveTo="opacity-0 scale-95"
           show={isSearchEnabled}
         >
-          <div className="flex h-[72px] absolute -bottom-[75%] left-0 right-0 w-full items-center justify-center bg-[#f1f0f0] sm:h-[108px] sm:-bottom-[112.5%] lg:h-36 lg:-bottom-[150%]">
-            <div className="relative flex w-2/3 h-10 lg:h-20 grow-1">
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <div className="absolute -bottom-[75%] left-0 right-0 flex h-[72px] w-full items-center justify-center bg-[#f1f0f0] sm:-bottom-[112.5%] sm:h-[108px] lg:-bottom-[150%] lg:h-36">
+            <div className="grow-1 relative flex h-10 w-2/3 lg:h-20">
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg
                   aria-hidden="true"
-                  className="w-5 h-5 text-gray-500 dark:text-gray-400 lg:w-8 lg:h-8"
+                  className="h-5 w-5 text-gray-500 dark:text-gray-400 lg:h-8 lg:w-8"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -126,12 +126,12 @@ export default function Home() {
               <input
                 type="text"
                 id="search"
-                className="block h-full w-full rounded-tl-lg rounded-bl-lg text-sm p-2.5 pl-14 lg:text-lg bg-white focus:outline-none"
+                className="block h-full w-full rounded-tl-lg rounded-bl-lg bg-white p-2.5 pl-14 text-sm focus:outline-none lg:text-lg"
                 placeholder="Enter Your Search Topic"
               />
               <button
                 type="button"
-                className="inset-y-0 right-0 flex items-center h-full pr-3 bg-white rounded-tr-lg rounded-br-lg"
+                className="inset-y-0 right-0 flex h-full items-center rounded-tr-lg rounded-br-lg bg-white pr-3"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +139,7 @@ export default function Home() {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-5 h-5 text-gray-500 dark:text-gray-400 lg:w-8 lg:h-8"
+                  className="h-5 w-5 text-gray-500 dark:text-gray-400 lg:h-8 lg:w-8"
                 >
                   <path
                     strokeLinecap="round"
@@ -158,7 +158,7 @@ export default function Home() {
         } w-full`}
       >
         {/* Cover Large Image */}
-        <div className="relative -z-10 min-h-[300px] md:min-h-[300px] lg:min-h-[600px] xl:min-h-[700px] 2xl:min-h-[770px] transition-all bg-cover bg-no-repeat bg-center">
+        <div className="relative -z-10 min-h-[300px] bg-cover bg-center bg-no-repeat transition-all md:min-h-[300px] lg:min-h-[600px] xl:min-h-[700px] 2xl:min-h-[770px]">
           <Image
             src="/static/images/blog-main.jpg"
             className="object-cover object-center"
@@ -167,20 +167,20 @@ export default function Home() {
           />
         </div>
         {/* Blog Lists section sm:px-11 sm:pt-20 */}
-        <section className="flex flex-wrap px-11 sm:max-w-[520px] sm:px-0 mx-auto border border-red-500 pt-20 w-full">
-          {/* mb-20 은 나중에 */}
-          <div className="flex flex-col border border-green-600 max-h-96 min-w-96">
-            <div className="relative w-full h-56 mb-4 grow">
+
+        <section className="mx-auto flex flex-wrap justify-center border border-red-500 px-11 pt-20 sm:max-w-[520px] sm:px-0">
+          <div className="mb-20 flex max-h-96 flex-col border border-green-600">
+            <div className="relative mb-4 h-56 w-full grow">
               <Image
                 src="/static/images/blog-main.jpg"
-                className="object-cover object-center rounded-lg -z-10"
+                className="-z-10 rounded-lg object-cover object-center"
                 fill
                 alt="blog-thumbnail"
               />
             </div>
             <div className="grow-0">
               {/* #Javascript #React #NextJS */}
-              <div className="mb-3 flex flex-wrap items-center text-[#D10068] font-normal text-sm space-x-4">
+              <div className="mb-3 flex flex-wrap items-center space-x-4 text-sm font-normal text-[#D10068]">
                 <Link href="#" className="block">
                   <span>#Javascript</span>
                 </Link>
@@ -191,10 +191,10 @@ export default function Home() {
                   <span>#NextJS</span>
                 </Link>
               </div>
-              <h2 className="text-lg font-bold mb-2 text-[#292929] leading-normal">
+              <h2 className="mb-2 text-lg font-bold leading-normal text-[#292929]">
                 Blog markdown test!
               </h2>
-              <p className="text-sm mb-0 text-[#292929] font-normal leading-relaxed max-h-20 line-clamp-2">
+              <p className="mb-0 max-h-20 text-sm font-normal leading-relaxed text-[#292929] line-clamp-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
