@@ -181,7 +181,7 @@ export default function Home() {
                   fill
                   alt="blog-thumbnail"
                 />
-                <div className="pointer-events-none absolute top-5 left-5 flex h-16 w-16 flex-col items-center justify-center rounded-md bg-black/60 text-2xl leading-none text-white">
+                <div className="pointer-events-none absolute top-5 left-5 -z-10 flex h-16 w-16 flex-col items-center justify-center rounded-md bg-black/60 text-2xl leading-none text-white">
                   <span className="font-bold">25</span>
                   <span className="mt-1 text-xs">Dec</span>
                 </div>
@@ -224,7 +224,7 @@ export default function Home() {
                   fill
                   alt="blog-thumbnail"
                 />
-                <div className="pointer-events-none absolute top-5 left-5 flex h-16 w-16 flex-col items-center justify-center rounded-md bg-black/60 text-2xl leading-none text-white">
+                <div className="pointer-events-none absolute top-5 left-5 -z-10 flex h-16 w-16 flex-col items-center justify-center rounded-md bg-black/60 text-2xl leading-none text-white">
                   <span className="font-bold">25</span>
                   <span className="mt-1 text-xs">Dec</span>
                 </div>
@@ -267,7 +267,7 @@ export default function Home() {
                   fill
                   alt="blog-thumbnail"
                 />
-                <div className="pointer-events-none absolute top-5 left-5 flex h-16 w-16 flex-col items-center justify-center rounded-md bg-black/60 text-2xl leading-none text-white">
+                <div className="pointer-events-none absolute top-5 left-5 -z-10 flex h-16 w-16 flex-col items-center justify-center rounded-md bg-black/60 text-2xl leading-none text-white">
                   <span className="font-bold">25</span>
                   <span className="mt-1 text-xs">Dec</span>
                 </div>
@@ -310,7 +310,7 @@ export default function Home() {
                   fill
                   alt="blog-thumbnail"
                 />
-                <div className="pointer-events-none absolute top-5 left-5 flex h-16 w-16 flex-col items-center justify-center rounded-md bg-black/60 text-2xl leading-none text-white">
+                <div className="pointer-events-none absolute top-5 left-5 -z-10 flex h-16 w-16 flex-col items-center justify-center rounded-md bg-black/60 text-2xl leading-none text-white">
                   <span className="font-bold">25</span>
                   <span className="mt-1 text-xs">Dec</span>
                 </div>
@@ -353,7 +353,7 @@ export default function Home() {
                   fill
                   alt="blog-thumbnail"
                 />
-                <div className="pointer-events-none absolute top-5 left-5 flex h-16 w-16 flex-col items-center justify-center rounded-md bg-black/60 text-2xl leading-none text-white">
+                <div className="pointer-events-none absolute top-5 left-5 -z-10 flex h-16 w-16 flex-col items-center justify-center rounded-md bg-black/60 text-2xl leading-none text-white">
                   <span className="font-bold">25</span>
                   <span className="mt-1 text-xs">Dec</span>
                 </div>
