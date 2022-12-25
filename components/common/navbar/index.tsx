@@ -12,7 +12,7 @@ interface INavbarProps {
 
 const Navbar = ({ isSearchEnabled, onSearch }: INavbarProps) => {
   return (
-    <nav className="navigation sticky -top-2 flex h-24 w-full items-center justify-between bg-[#e2e2e2] px-2 pb-2 pt-4 lg:px-4 lg:pb-4 lg:pt-8">
+    <nav className="navigation sticky -top-2 z-50 flex h-24 w-full items-center justify-between bg-[#e2e2e2] px-2 pb-2 pt-4 lg:px-4 lg:pb-4 lg:pt-8">
       <Popover className="lg:hidden">
         <div className="relative">
           <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
