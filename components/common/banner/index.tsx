@@ -11,9 +11,9 @@ const MainBanner = () => {
         fill
         alt="main-image"
       />
-      <div className="absolute left-0 right-0 top-0 bottom-0 m-auto flex h-64 w-[50%] text-white">
-        <p className="flex w-full flex-col justify-center text-xl font-light leading-tight sm:text-3xl lg:w-2/3 lg:text-4xl">
-          <span>안녕하세요.</span>
+      <div className="absolute left-0 right-0 top-0 bottom-0 m-auto flex h-64 w-[60%] justify-start space-x-14 text-white">
+        <p className="flex w-80 flex-col justify-center font-Catamaran text-xl font-light leading-tight sm:text-2xl lg:text-3xl">
+          <span className="font-bold">Hello, World!</span>
           <br />
           <ReactRotatingText
             items={[
@@ -23,18 +23,18 @@ const MainBanner = () => {
             ]}
           />
           <span>
-            개발자 <strong>정광묵</strong>입니다.
+            개발자 <strong className="font-extrabold">정광묵</strong>입니다.
           </span>
-          <button className="btn-outline btn-info btn-xs btn mt-4 w-1/2 sm:btn-sm md:btn-md lg:btn-lg">
-            About me 👨🏻‍💻
+          <button className="btn-outline btn-info btn-xs btn mt-6 w-fit sm:btn-sm md:btn-md lg:btn-lg">
+            About👨🏻‍💻
           </button>
         </p>
-        <div className="pointer-events-none relative hidden w-0 lg:block lg:w-1/3">
+        <div className="border-neutral-900 pointer-events-none relative hidden w-64 rounded-full border-8 bg-white lg:block">
           <Image
-            src="/static/images/mimoticon.webp"
-            className="bg-transparent object-cover object-center"
+            src="/static/images/portrait.jpeg"
+            className="rounded-full bg-transparent object-cover object-center"
             fill
-            alt="gif-image"
+            alt="portrait-image"
           />
         </div>
       </div>
