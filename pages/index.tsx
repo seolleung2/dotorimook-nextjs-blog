@@ -17,12 +17,16 @@ export default function Home() {
 export const getStaticProps: GetStaticProps = async () => {
   const blogFileNames = getBlogFileNames();
 
-  blogFileNames.forEach((fileName) => {
+  const blogList = blogFileNames.map((fileName) => {
     const blog = getBlog(fileName);
-    console.log(blog);
+    return blog;
   });
 
+  console.log(blogList);
+
   return {
-    props: {},
+    props: {
+      blogList,
+    },
   };
 };
