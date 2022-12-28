@@ -1,20 +1,18 @@
-import React, { useState, FunctionComponent, PropsWithChildren } from "react";
+import React, { useState, FunctionComponent } from "react";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import { Navbar, Footer, Utterances } from "@Components/common";
+import { Navbar, Footer } from "@Components/common";
 
-const PageLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
-  const router = useRouter();
+type Props = {
+  path: string;
+  children: React.ReactNode;
+};
 
-  const slug = router.query.slug as string;
-
+const PageLayout: FunctionComponent<Props> = ({ path, children }) => {
   const [isSearchEnabled, setIsSearchEnabled] = useState<boolean>(false);
 
   const clickSearchHandler = () => {
     setIsSearchEnabled(!isSearchEnabled);
   };
-
-  const utterancesRepo = "seolleung2/dotorimook-nextjs-blog";
 
   return (
     <>
@@ -31,7 +29,6 @@ const PageLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
       >
         <div className="flex flex-col items-center border border-red-600">
           {children}
-          {slug && <Utterances repo={utterancesRepo} path={slug} />}
         </div>
       </section>
       <Footer />

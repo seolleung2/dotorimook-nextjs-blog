@@ -1,10 +1,18 @@
-import { NextPage } from "next/types";
-import { PageLayout } from "@Components/layout";
+import type { NextPage, GetStaticProps } from "next";
+import { BaseLayout } from "@Components/layout";
+import { Utterances } from "@Components/common";
+import { getBlogs } from "@Libraries/blogs";
 
-const BlogDetail: NextPage = (props) => {
+type Props = {
+  path: string;
+};
+
+const BlogDetail: NextPage<Props> = ({ path }) => {
+  const utterancesRepo = "seolleung2/dotorimook-nextjs-blog";
+
   return (
     <>
-      <PageLayout>
+      <BaseLayout>
         <div className="m-auto w-2/3">
           {/* Blog Header Starts */}
           <div className="blog-detail-header">
@@ -53,10 +61,36 @@ const BlogDetail: NextPage = (props) => {
           <article className="lg:prose-lg markdown-image-50 prose">
             여기에 블로그 내용이 들어갑니다.
           </article>
+          <Utterances repo={utterancesRepo} path={path} />
         </div>
-      </PageLayout>
+      </BaseLayout>
     </>
   );
 };
 
 export default BlogDetail;
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { params } = context;
+
+  const slug = params!.slug;
+
+  return {
+    props: {
+      path: slug,
+    },
+  };
+};
+
+export const getStaticPaths = async () => {
+  const blogs = getBlogs();
+
+  return {
+    paths: blogs.map((blog) => ({
+      params: {
+        slug: blog.slug,
+      },
+    })),
+    fallback: false,
+  };
+};
