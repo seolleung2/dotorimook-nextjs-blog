@@ -3,7 +3,7 @@ import type { NextPage, GetStaticProps } from "next";
 import { BaseLayout } from "@Components/layout";
 import { Banner } from "@Components/common";
 import { BlogList } from "@Components/blogs";
-import { getBlogFileNames, getBlog } from "@Libraries/md";
+import { getBlogs } from "@Libraries/md";
 
 export default function Home() {
   return (
@@ -15,12 +15,7 @@ export default function Home() {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const blogFileNames = getBlogFileNames();
-
-  const blogList = blogFileNames.map((fileName) => {
-    const blog = getBlog(fileName);
-    return blog;
-  });
+  const blogList = getBlogs();
 
   console.log(blogList);
 

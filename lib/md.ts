@@ -36,4 +36,15 @@ const getBlog = (fileName: string): Blog => {
   return blog;
 };
 
-export { getBlogFileNames, getBlog };
+// * 모든 블로그 항목의 정보를 가져오도록 수정
+const getAllItems = (fileNames: string[]) => {
+  const items = fileNames.map((name) => getBlog(name));
+  return items;
+};
+
+const getBlogs = (): Blog[] => {
+  const names = getBlogFileNames();
+  return getAllItems(names);
+};
+
+export { getBlogFileNames, getBlogs };
