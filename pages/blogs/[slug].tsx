@@ -1,19 +1,20 @@
 import type { NextPage, GetStaticProps } from "next";
 import { BaseLayout } from "@Components/layout";
 import { Utterances } from "@Components/common";
-import { getBlogs } from "@Libraries/blogs";
+import { getBlogBySlug, getBlogs, getBlogsSlugs } from "@Libraries/blogs";
+import { Blog } from "@Interfaces/Blog";
 
 type Props = {
-  path: string;
+  blog: Blog;
 };
 
-const BlogDetail: NextPage<Props> = ({ path }) => {
+const BlogDetail: NextPage<Props> = ({ blog }) => {
   const utterancesRepo = "seolleung2/dotorimook-nextjs-blog";
-
+  console.log("blog", blog);
   return (
     <>
       <BaseLayout>
-        <div className="m-auto w-2/3">
+        <div className="m-auto w-2/3 border border-blue-500 py-16 px-8">
           {/* Blog Header Starts */}
           <div className="blog-detail-header">
             <div className="mb-2 flex flex-row justify-between">
@@ -58,10 +59,10 @@ const BlogDetail: NextPage<Props> = ({ path }) => {
             </div>
           </div>
           {/* Blog Header Ends */}
-          <article className="lg:prose-lg markdown-image-50 prose">
-            여기에 블로그 내용이 들어갑니다.
+          <article className="lg:prose-lg markdown-image-50 prose my-6">
+            {/* {blog.content} */}
           </article>
-          <Utterances repo={utterancesRepo} path={path} />
+          <Utterances repo={utterancesRepo} path={blog.slug} />
         </div>
       </BaseLayout>
     </>
@@ -70,27 +71,25 @@ const BlogDetail: NextPage<Props> = ({ path }) => {
 
 export default BlogDetail;
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const { params } = context;
+export const getStaticProps: GetStaticProps = async (context: any) => {
+  const { slug } = context.params;
 
-  const slug = params!.slug;
+  const blog = getBlogBySlug(slug);
 
   return {
     props: {
-      path: slug,
+      blog,
     },
   };
 };
 
 export const getStaticPaths = async () => {
-  const blogs = getBlogs();
+  const slugs = getBlogsSlugs();
+
+  const paths = slugs.map((slug) => ({ params: { slug } }));
 
   return {
-    paths: blogs.map((blog) => ({
-      params: {
-        slug: blog.slug,
-      },
-    })),
+    paths,
     fallback: false,
   };
 };
