@@ -3,7 +3,7 @@ import type { NextPage, GetStaticProps } from "next";
 import { BaseLayout } from "@Components/layout";
 import { Banner } from "@Components/common";
 import { BlogList } from "@Components/blogs";
-import { getBlogs } from "@Libraries/md";
+import { getBlogs } from "@Libraries/blogs";
 
 export default function Home() {
   return (
