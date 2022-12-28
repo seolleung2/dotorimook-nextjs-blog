@@ -1,13 +1,20 @@
 import React, { useState, FunctionComponent, PropsWithChildren } from "react";
 import Head from "next/head";
-import { Navbar, Footer } from "@Components/common";
+import { useRouter } from "next/router";
+import { Navbar, Footer, Utterances } from "@Components/common";
 
-const BaseLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
+const PageLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
+  const router = useRouter();
+
+  const slug = router.query.slug as string;
+
   const [isSearchEnabled, setIsSearchEnabled] = useState<boolean>(false);
 
   const clickSearchHandler = () => {
     setIsSearchEnabled(!isSearchEnabled);
   };
+
+  const utterancesRepo = "seolleung2/dotorimook-nextjs-blog";
 
   return (
     <>
@@ -22,11 +29,14 @@ const BaseLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
           isSearchEnabled && "pt-[72px] sm:pt-[108px] lg:pt-36"
         } w-full`}
       >
-        {children}
+        <div className="flex flex-col items-center border border-red-600">
+          {children}
+          {slug && <Utterances repo={utterancesRepo} path={slug} />}
+        </div>
       </section>
       <Footer />
     </>
   );
 };
 
-export default BaseLayout;
+export default PageLayout;
