@@ -5,8 +5,7 @@ author: Filip Jerga
 authorImage: https://thrangra.sirv.com/Ethereum_blue_light-small.jpg
 coverImage: https://thrangra.sirv.com/Ethereum_blue_light-small.jpg
 date: "2022-04-25"
-tags: ["NFT", "React", "Solidity", "Ethereum"]
-category: "development"
+categories: ["NFT", "React", "Solidity", "Ethereum"]
 ---
 
 Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, etc. No config is necessary.

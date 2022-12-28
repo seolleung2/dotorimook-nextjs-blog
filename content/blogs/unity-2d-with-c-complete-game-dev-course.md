@@ -5,8 +5,7 @@ author: Filip Jerga
 authorImage: https://thrangra.sirv.com/Final_Unity_2D_Small.jpg
 coverImage: https://thrangra.sirv.com/Final_Unity_2D_Small.jpg
 date: "2022-01-25"
-tags: ["Unity", "Game", "C#"]
-category: "development"
+categories: ["Unity", "Game", "C#"]
 ---
 
 **What is Unity?**

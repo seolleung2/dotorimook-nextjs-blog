@@ -5,8 +5,7 @@ author: Filip Jerga
 authorImage: https://thrangra.sirv.com/Course_logo%20copy.jpg
 coverImage: https://thrangra.sirv.com/Course_logo%20copy.jpg
 date: "2021-05-25"
-tags: ["Javascript", "ReactJS"]
-category: "development"
+categories: ["Javascript", "ReactJS"]
 ---
 
 **What is Javascript?**

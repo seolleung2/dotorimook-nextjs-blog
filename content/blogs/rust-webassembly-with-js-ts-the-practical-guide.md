@@ -5,8 +5,7 @@ author: Filip Jerga
 authorImage: https://thrangra.sirv.com/Rust_small.jpg
 coverImage: https://thrangra.sirv.com/Rust_small.jpg
 date: "2022-03-25"
-tags: ["Rust", "WebAssembly"]
-category: "development"
+categories: ["Rust", "WebAssembly"]
 ---
 
 **What is Rust?**

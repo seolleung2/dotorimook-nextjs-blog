@@ -4,24 +4,29 @@ import { BaseLayout } from "@Components/layout";
 import { Banner } from "@Components/common";
 import { BlogList } from "@Components/blogs";
 import { getBlogs } from "@Libraries/blogs";
+import { Blog } from "@Interfaces/Blog";
 
-export default function Home() {
+type Props = {
+  blogs: Blog[];
+};
+
+export const Home: NextPage<Props> = ({ blogs }) => {
   return (
     <BaseLayout>
       <Banner />
-      <BlogList />
+      <BlogList blogs={blogs} />
     </BaseLayout>
   );
-}
+};
+
+export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const blogList = getBlogs();
-
-  console.log(blogList);
+  const blogs = getBlogs();
 
   return {
     props: {
-      blogList,
+      blogs,
     },
   };
 };

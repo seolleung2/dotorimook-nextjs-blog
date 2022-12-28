@@ -1,22 +1,13 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Blog } from "@Interfaces/Blog";
 
-type BlogType = {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  coverImage: string;
-  tags: string[];
-  category: string;
+type Props = {
+  blog: Blog;
 };
 
-interface IBlogItemProps {
-  blog: BlogType;
-}
-
-const BlogItem = ({ blog }: IBlogItemProps) => {
+const BlogItem: FunctionComponent<Props> = ({ blog }) => {
   const fullDate = new Date(blog.date);
   const monthIndex = fullDate.getMonth();
   const date = fullDate.getDate();
@@ -38,9 +29,9 @@ const BlogItem = ({ blog }: IBlogItemProps) => {
         </div>
         <div className="">
           <div className="mb-3 flex flex-wrap items-center space-x-4 text-sm font-normal text-[#D10068]">
-            {(blog.tags || []).map((tag) => (
-              <span className="block" key={tag}>
-                #{tag}
+            {(blog.categories || []).map((category) => (
+              <span className="block" key={category}>
+                #{category}
               </span>
             ))}
           </div>
