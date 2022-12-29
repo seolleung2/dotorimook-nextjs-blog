@@ -1,8 +1,10 @@
 import type { NextPage, GetStaticProps } from "next";
+import Image from "next/image";
 import { BaseLayout } from "@Components/layout";
 import { Utterances } from "@Components/common";
-import { getBlogBySlug, getBlogs, getBlogsSlugs } from "@Libraries/blogs";
+import { getBlogBySlug, getBlogsSlugs } from "@Libraries/blogs";
 import { Blog } from "@Interfaces/Blog";
+import { ParsedUrlQuery } from "querystring";
 
 type Props = {
   blog: Blog;
@@ -10,57 +12,61 @@ type Props = {
 
 const BlogDetail: NextPage<Props> = ({ blog }) => {
   const utterancesRepo = "seolleung2/dotorimook-nextjs-blog";
-  console.log("blog", blog);
+
   return (
     <>
-      <BaseLayout>
-        <div className="m-auto w-2/3 border border-blue-500 py-16 px-8">
+      <BaseLayout pageTitle={blog.title}>
+        <div className="w-full py-16 px-6 sm:m-auto sm:w-3/4 sm:px-8 lg:w-1/2">
           {/* Blog Header Starts */}
           <div className="blog-detail-header">
             <div className="mb-2 flex flex-row justify-between">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
                   <a href="#">
-                    <span className="sr-only">Dotori Jung</span>
+                    <span className="sr-only">{blog.author}</span>
                     <div className="relative !mb-0 h-10 w-10">
-                      {/* <Image 
+                      <Image
                         priority
-                        layout="fill"
-                        objectFit="cover"
-                        className="rounded-full"
-                        src={authorImage} alt="" 
-                      /> */}
+                        fill
+                        className="rounded-full object-cover"
+                        src={blog.authorImage}
+                        alt="author-image"
+                      />
                     </div>
                   </a>
                 </div>
                 <div className="ml-3">
                   <p className="!mb-0 text-sm font-medium text-gray-900">
                     <a href="#" className="hover:underline">
-                      Dotori Jung
+                      {blog.author}
                     </a>
                   </p>
                   <div className="flex space-x-1 text-sm text-gray-500">
-                    <time dateTime="{date}">2022-10-10</time>
+                    <time dateTime={blog.date}>{blog.date}</time>
                   </div>
                 </div>
               </div>
               <div className="flex self-end">{/* Social Links Here */}</div>
             </div>
-            <h1 className="mb-1 text-4xl font-bold">블로그 제목 입니다.</h1>
-            <h2 className="blog-detail-header-subtitle mb-2 text-xl text-gray-600">
-              블로그 요약 설명 (description)
+            <h1 className="mb-1 break-all text-2xl font-bold sm:text-4xl">
+              {blog.title}
+            </h1>
+            <h2 className="blog-detail-header-subtitle mb-2 text-lg text-gray-600 sm:text-xl">
+              {blog.description}
             </h2>
-            <div className="relative mx-auto h-96 w-full bg-black">
-              {/* <Image
+            <div className="relative mx-auto h-72 w-full bg-black sm:h-80 md:h-96">
+              <Image
                 priority
-                layout="fill"
-                objectFit="cover"
-                src={coverImage} alt=""/> */}
+                fill
+                className="object-cover"
+                src={blog.coverImage}
+                alt="cover-image"
+              />
             </div>
           </div>
           {/* Blog Header Ends */}
           <article className="lg:prose-lg markdown-image-50 prose my-6">
-            {/* {blog.content} */}
+            {blog.content}
           </article>
           <Utterances repo={utterancesRepo} path={blog.slug} />
         </div>
@@ -71,8 +77,14 @@ const BlogDetail: NextPage<Props> = ({ blog }) => {
 
 export default BlogDetail;
 
-export const getStaticProps: GetStaticProps = async (context: any) => {
-  const { slug } = context.params;
+interface Params extends ParsedUrlQuery {
+  slug: string;
+}
+
+export const getStaticProps: GetStaticProps<Props, Params> = async (
+  context
+) => {
+  const { slug } = context.params!;
 
   const blog = getBlogBySlug(slug);
 
