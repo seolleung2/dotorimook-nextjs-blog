@@ -5,6 +5,7 @@ import {
   getFileNames,
   getItemInPath,
   getAllItems,
+  markdownToHtml,
 } from "@Libraries/md";
 
 const BLOG_DIR = getDir("/content/blogs");
@@ -33,4 +34,17 @@ const getBlogs = (): Blog[] => {
   return getAllItems(names, getBlog) as Blog[];
 };
 
-export { getBlogFileNames, getBlogs, getBlog, getBlogsSlugs, getBlogBySlug };
+const getBlogBySlugWithMarkdown = async (slug: string): Promise<Blog> => {
+  const blog = getBlogBySlug(slug);
+  blog.content = await markdownToHtml(blog.content);
+  return blog;
+};
+
+export {
+  getBlogFileNames,
+  getBlogs,
+  getBlog,
+  getBlogsSlugs,
+  getBlogBySlug,
+  getBlogBySlugWithMarkdown,
+};
