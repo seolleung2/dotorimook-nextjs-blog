@@ -65,7 +65,7 @@ const BlogDetail: NextPage<Props> = ({ blog }) => {
             </div>
           </div>
           {/* Blog Header Ends */}
-          <article className="lg:prose-lg markdown-image-50 prose my-6">
+          <article className="markdown-image-50 prose my-6 block min-w-full lg:prose-lg">
             <div dangerouslySetInnerHTML={{ __html: blog.content }} />
           </article>
           <Utterances repo={utterancesRepo} path={blog.slug} />
