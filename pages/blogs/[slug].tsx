@@ -4,7 +4,7 @@ import { Utterances } from "@Components/common";
 import { getBlogBySlugWithMarkdown, getBlogsSlugs } from "@Libraries/blogs";
 import { Blog } from "@Interfaces/Blog";
 import { ParsedUrlQuery } from "querystring";
-import { BlogHeader } from "@Components/blogs";
+import { BlogHeader, TableOfContents } from "@Components/blogs";
 
 type Props = {
   blog: Blog;
@@ -16,10 +16,14 @@ const BlogDetail: NextPage<Props> = ({ blog }) => {
   return (
     <>
       <BaseLayout pageTitle={blog.title}>
+        <TableOfContents />
         <div className="w-full py-16 px-6 sm:m-auto sm:w-3/4 sm:px-8 lg:w-1/2">
           <BlogHeader blog={blog} />
           <article className="markdown-image-50 prose my-6 block min-w-full lg:prose-lg">
-            <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+            <div
+              id="blogArticle"
+              dangerouslySetInnerHTML={{ __html: blog.content }}
+            />
           </article>
           <Utterances repo={utterancesRepo} path={blog.slug} />
         </div>
