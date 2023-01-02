@@ -16,7 +16,6 @@ const BlogDetail: NextPage<Props> = ({ blog }) => {
   return (
     <>
       <BaseLayout pageTitle={blog.title}>
-        <TableOfContents />
         <div className="w-full py-16 px-6 sm:m-auto sm:w-3/4 sm:px-8 lg:w-1/2">
           <BlogHeader blog={blog} />
           <article className="markdown-image-50 prose my-6 block min-w-full lg:prose-lg">
